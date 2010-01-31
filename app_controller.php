@@ -15,7 +15,8 @@ class AppController extends Controller {
 			'password' => 'passwd'
 		);
 
-                $this->Auth->allow('display');
+		//$this->Auth->authorize = 'controller';
+                $this->Auth->allow('*');
 
                 if ($user = $this->Auth->user()) {
                         $uid    = $user['User']['id'];

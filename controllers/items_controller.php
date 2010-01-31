@@ -7,8 +7,8 @@ class ItemsController extends AppController {
 
 
 	function beforeFilter() {
-		pr ($this->Auth->user());
-		parent::beforeFilter();
+		//pr ($this->Auth->user());
+		//parent::beforeFilter();
 		$this->Auth->authorize = 'controller';
 	}
 
