@@ -1,5 +1,11 @@
 <style>
-.images img {max-width:150px;}
+.images img {max-width:210px;}
+.good {
+	padding:10px;
+	margin:30px 10px;
+/*	border:1px solid #ddd;*/
+}
+.comment {font-style:italic;}
 </style>
 <h1><a href="/items/add/">add</a></h1>
 <?php //pr ($items) ?>
@@ -8,12 +14,12 @@
 <ul>
 <?php foreach ($items as $k=> $v): ?>
 <li>
-	<ul>
+	<ul class="good">
 		<li><a href="/items/add/<?php echo $v['Item']['id'] ?>"><?php echo $v['Item']['name'] ?></a></li>
 		<li><?php echo $v['Item']['desc'] ?></li>
-		<li><?php echo $v['Item']['link'] ?></li>
+		<li><?php echo $text->itemLink($v['Item']['link']) ?></li>
 		<?php if (!empty($v['Item']['comment'])): ?>
-			<li><?php echo $v['Item']['comment'] ?></li>
+			<li class="comment"><?php echo $v['Item']['comment'] ?></li>
 		<?php endif ?>
 
 		<li class="images">

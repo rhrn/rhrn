@@ -3,7 +3,7 @@ class ItemsController extends AppController {
 
 	var $name = 'Items';
 	//var $componets = array('Auth', 'Session');
-	var $helpers = array('Form', 'Html');
+	var $helpers = array('Form', 'Html', 'Text');
 
 
 	function beforeFilter() {
