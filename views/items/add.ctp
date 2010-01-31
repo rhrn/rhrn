@@ -18,6 +18,8 @@ $().ready(function() {
 
 <?php echo $form->input('link', array('label'=>'link')) ?>
 
+<?php echo $form->input('tags', array('label'=>'tags')) ?>
+
 <?php echo $form->input('comment', array('label'=>'comment')) ?>
 
 <?php if (!empty($this->data['Image'][0])): ?>
