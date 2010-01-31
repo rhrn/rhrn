@@ -2,6 +2,7 @@
 class Image extends AppModel {
 	var $name = 'Image';
 	var $displayField = 'id';
+	var $dir = 'images';
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
 
 	var $belongsTo = array(
@@ -17,7 +18,7 @@ class Image extends AppModel {
 
 	function saveImage($data, $uid, $itemID) {
 
-		$imgDir = WWW_ROOT . DS . 'files' . DS . 'img' . DS . $itemID . DS;
+		$imgDir = WWW_ROOT . DS . $this->dir . DS . $itemID . DS;
 		if (!file_exists($imgDir)) {
 			mkdir($imgDir);
 		}

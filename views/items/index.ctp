@@ -19,7 +19,7 @@
 		<li class="images">
 			<?php if(!empty($v['Image'])): ?>
 				<?php foreach ($v['Image'] as $k => $v): ?>
-					<img src="/files/img/<?php echo $v['item_id'] . '/' . $v['name'] ?>" alt="<?php echo $v['alt'] ?>" />
+					<img src="/images/<?php echo $v['item_id'] . '/' . $v['name'] ?>" alt="<?php echo $v['alt'] ?>" />
 				<?php endforeach ?>
 			<?php endif ?>
 		</li>

@@ -23,16 +23,14 @@ $().ready(function() {
 <?php if (!empty($this->data['Image'][0])): ?>
 	<?php foreach ($this->data['Image'] as $k => $v): ?>
 
-<img src="/files/img/<?php echo $v['item_id'] . '/' . $v['name'] ?>" alt="<?php echo $v['alt'] ?>" /> -
+<img src="/images/<?php echo $v['item_id'] . '/' . $v['name'] ?>" alt="<?php echo $v['alt'] ?>" /> -
 	<?php endforeach ?>
 <?php endif ?>
 
-<?php if (isset($this->data['Item']['id'])): ?>
-	<?php echo $form->input('Image.imglink', array('label'=>'img link', 'name'=>'data[Image][imglink][]')) ?><br />
-	<a id="imglinkplus">[+]</a>
-	<?php echo $form->input('Image.file', array('label'=>'upload file', 'type'=>'file', 'name'=>'data[Image][file][]')) ?>
-	<a id="imgfileplus">[+]</a>
-<?php endif ?>
+<?php echo $form->input('Image.imglink', array('label'=>'img link', 'name'=>'data[Image][imglink][]')) ?><br />
+<a id="imglinkplus">[+]</a>
+<?php echo $form->input('Image.file', array('label'=>'upload file', 'type'=>'file', 'name'=>'data[Image][file][]')) ?>
+<a id="imgfileplus">[+]</a>
 
 <?php echo $form->submit('save') ?>
 <?php echo $form->end() ?>

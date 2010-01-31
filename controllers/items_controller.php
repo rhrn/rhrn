@@ -10,6 +10,7 @@ class ItemsController extends AppController {
 		//pr ($this->Auth->user());
 		//parent::beforeFilter();
 		$this->Auth->authorize = 'controller';
+		$this->set('User', $this->Auth->user('email'));
 	}
 
 	function isAuthorized() {
