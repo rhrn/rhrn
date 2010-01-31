@@ -49,5 +49,18 @@ class User extends AppModel {
 		return false;
 	}
 
+	function genPass() {
+		srand((double)microtime()*1000000);
+		$chars = 'qwertyuiopasdfghjklzxcvbnm';
+		$pass = '';
+		for ($i = 0; $i < 5; $i++) {
+			$num = rand() % 26;
+			$tmp = substr($chars, $num, 1);
+			$pass = $pass . $tmp;
+		}
+
+		return $pass . rand(00, 99);
+	}
+
 }
 ?>
