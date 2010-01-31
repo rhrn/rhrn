@@ -1,0 +1,3 @@
+webroot/img/*
+tmp/*
+config/database.php
