@@ -21,7 +21,7 @@ class AppController extends Controller {
                 if ($user = $this->Auth->user()) {
                         $uid    = $user['User']['id'];
                         $login  = $user['User']['email'];
-                        $this->set('User', $login);
+                        $this->set('User', $user['User']);
                 }
         }
 
