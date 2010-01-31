@@ -15,12 +15,12 @@ class UsersController extends AppController {
 			$pass = $this->User->genPass();
 			$this->data['User']['passwd'] = $this->Auth->password($pass);
 			if ($data = $this->User->register($this->data)) {
-				$data['pass'] = $pass;
+				$this->Email->template = 'register';
 				$this->Email->to = $this->data['User']['email'];
 				$this->Email->from = 'Mayhem Project <noreply@mayhem.rhrn.locum.ru>';
 				$this->Email->subject = 'регистрация';
 				$this->Email->sendAs = 'both';
-				$this->Email->template = 'register';
+				$data['pass'] = $pass;
 				$this->set($data);
 				var_dump($this->Email->send());
 			}
